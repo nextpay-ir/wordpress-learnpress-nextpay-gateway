@@ -111,7 +111,7 @@ class LP_Gateway_Nextpay extends LP_Gateway_Abstract {
 		$result = $result->PaymentVerificationResult;
 
 
-		if ($result->code != 0) {
+		if ($result->code == 0) {
 			// make order status success
 			$this->payment_status_completed($order , $request);
 			// redirect to success page
